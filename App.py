@@ -14,8 +14,8 @@ def Productos():
     return render_template('Productos.html')
 
 @app.route("/ServicioTecnico")
-def Servicio():
-    return render_template('Servicio.html')
+def Servicios():
+    return render_template('Servicios.html')
 
 @app.route("/Contactanos")
 def Contactanos():
