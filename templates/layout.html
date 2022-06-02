@@ -14,12 +14,34 @@
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
 </head>
+<style>
+    body{
+        background: #0f0c29;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    body::-webkit-scrollbar{
+        width: 7px;
+    }
+    .ND{
+        text-decoration: none;
+    }
+    .DescriPC{
+        display: inline-block;
+        vertical-align: top;
+        color:white;
+        font-size:12px;
+        font-weight: bold
+    }
+</style>
 
 <body>
 
     <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('Inicio') }}">DJ's HardWare</a>
+            <a class="navbar-brand" href="{{ url_for('Inicio') }}">
+                <img src="{{ url_for('static', filename='imagenes/Logo.PNG') }}" alt="" width="30" height="24">
+                DJ's HardWare</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,10 +51,7 @@
                         <a class="nav-link" href="{{ url_for('Productos') }}">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('Contactanos') }}">Contactanos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('Servicios') }}">Servicios</a>
+                        <a class="nav-link" href="https://wa.me/50230599403">Contactanos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -42,11 +61,8 @@
             </div>
         </div>
     </nav>
-
-    <div class="container p-4">
-        {% block content %}
-        {% endblock %}
-    </div>
+    {% block content %}
+    {% endblock %}
 </body>
 
 </html>

@@ -13,14 +13,7 @@ def Inicio():
 def Productos():
     return render_template('Productos.html')
 
-@app.route("/ServicioTecnico")
-def Servicios():
-    return render_template('Servicios.html')
-
-@app.route("/Contactanos")
-def Contactanos():
-    return render_template('Contactanos.html')
 
 #Inializacion del sitio web para correr(modo debug encendido para detectar cambios)
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
